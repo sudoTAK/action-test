@@ -11,5 +11,6 @@ on:
 jobs:
   call-update-commit-sha:
     uses: ./.github/workflows/commit_sha.yml
+    secrets: inherit
     permissions:
       contents: write
