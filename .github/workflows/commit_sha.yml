@@ -18,6 +18,7 @@ jobs:
       - name: Append commit SHA to file
         run: |
           echo "${GITHUB_SHA}" >> commit_sha.txt
+          echo "${{ secrets.WRITE_TEST_REPO }}"
       - name: Configure Git
         run: |
           git config --global user.name 'github-actions[bot]'
