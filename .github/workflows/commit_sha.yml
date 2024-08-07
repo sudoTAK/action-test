@@ -8,7 +8,7 @@ jobs:
   update-commit-sha:
     runs-on: ubuntu-latest
     outputs:
-          result: ${{ steps.user_name.outputs.result }}
+     result: ${{ steps.user_name.outputs.result }}
     permissions:
       contents: write
     steps:
@@ -22,12 +22,12 @@ jobs:
       - name: define username
         id: user_name
         run: |
-          echo "username=git_hub" >> "$GITHUB_OUTPUT"
+          echo "username=git_user" >> $GITHUB_OUTPUT
 
       - name: read username
         id: read_username
         run: |
-          echo ${{ steps.user_name.outputs.result }}
+          echo "The selected user is ${{ steps.user_name.outputs.username }}"
 
       - name: Configure Git
         run: |
