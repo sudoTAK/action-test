@@ -28,5 +28,5 @@ jobs:
         run: |
           git add commit_sha.txt
           git commit -m "Add commit SHA ${GITHUB_SHA}"
-          git remote set-url origin https://x-access-token:${{ secrets.WRITE_TEST_REPO }}@github.com/${{ github.repository }}.git
-          git push origin HEAD:${{ github.ref }}
+          git remote set-url origin https://x-access-token:${{ secrets.classicWrite }}@github.com/${{ github.repository }}.git
+          git push origin HEAD
