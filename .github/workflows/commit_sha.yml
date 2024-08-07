@@ -12,9 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        env:
-          GITHUB_TOKEN: 'abcded'
-          GH_TOKEN: 'bdfdf'
+        with: 
+          token : 'abcd'
 
       - name: Append commit SHA to file
         run: |
