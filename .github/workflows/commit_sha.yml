@@ -30,6 +30,6 @@ jobs:
           git commit -m "Add commit SHA ${GITHUB_SHA}"
           git push origin HEAD:main
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.CLASSIC_WRITE }}
         
        
