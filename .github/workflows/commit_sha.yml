@@ -29,5 +29,5 @@ jobs:
           git commit -m "Add commit SHA ${GITHUB_SHA}"
           git push origin HEAD:main
         env:
-          token: 'abcded'
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        
