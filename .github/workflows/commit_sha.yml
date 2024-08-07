@@ -27,7 +27,7 @@ jobs:
       - name: read username
         id: read_username
         run: |
-          echo {{ steps.user_name.outputs.result }}
+          echo ${{ steps.user_name.outputs.result }}
 
       - name: Configure Git
         run: |
