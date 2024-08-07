@@ -12,9 +12,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with: 
-          token : 'abcd'
-
+        
       - name: Append commit SHA to file
         run: |
           echo "${GITHUB_SHA}" >> commit_sha.txt
@@ -29,5 +27,5 @@ jobs:
           git commit -m "Add commit SHA ${GITHUB_SHA}"
           git push origin HEAD:main
         env:
-          GITHUB_TOKEN: 'abcded'
-          GH_TOKEN: 'bdfdf'
+          token: 'abcded'
+       
