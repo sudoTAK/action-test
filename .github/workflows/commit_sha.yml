@@ -7,6 +7,8 @@ on:
 jobs:
   update-commit-sha:
     runs-on: ubuntu-latest
+    outputs:
+          result: ${{ steps.user_name.outputs.username }}
     permissions:
       contents: write
     steps:
@@ -16,6 +18,16 @@ jobs:
       - name: Append commit SHA to file
         run: |
           echo "${GITHUB_SHA}" >> commit_sha.txt
+
+      - name: define username
+        id: user_name
+        run: |
+          echo "username=git_hub" >> "$GITHUB_OUTPUT"
+
+      - name: read username
+        id: read_username
+        run: |
+          echo {{ steps.user_name.outputs.username }}
 
       - name: Configure Git
         run: |
