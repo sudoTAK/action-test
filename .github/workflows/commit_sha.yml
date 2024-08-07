@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.WRITE_TEST_REPO }}
+          token: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Append commit SHA to file
         run: |
@@ -30,6 +30,6 @@ jobs:
           git commit -m "Add commit SHA ${GITHUB_SHA}"
           git push origin HEAD:main
         env:
-          GH_TOKEN: ${{ secrets.WRITE_TEST_REPO }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
        
