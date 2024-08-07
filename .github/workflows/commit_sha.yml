@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
-          token: ${{ secrets.READ_TEST_REPO }}
+          token: ${{ secrets.WRITE_TEST_REPO }}
         
       - name: Append commit SHA to file
         run: |
