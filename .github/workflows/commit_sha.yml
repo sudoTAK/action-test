@@ -28,7 +28,7 @@ jobs:
         run: |
           git add commit_sha.txt
           git commit -m "Add commit SHA ${GITHUB_SHA}"
-          git push origin HEAD:${{ github.ref }}
+          git push origin HEAD
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
    
