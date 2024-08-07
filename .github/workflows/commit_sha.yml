@@ -7,8 +7,6 @@ on:
 jobs:
   update-commit-sha:
     runs-on: ubuntu-latest
-    outputs:
-     result: ${{ steps.user_name.outputs.result }}
     permissions:
       contents: write
     steps:
@@ -18,17 +16,6 @@ jobs:
       - name: Append commit SHA to file
         run: |
           echo "${GITHUB_SHA}" >> commit_sha.txt
-
-      - name: define username
-        id: user_name
-        run: |
-          echo "username=git_user" >> $GITHUB_OUTPUT
-
-      - name: read username
-        id: read_username
-        run: |
-          echo "The selected user is ${{ steps.user_name.outputs.username }}"
-
       - name: Configure Git
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -38,12 +25,7 @@ jobs:
         run: |
           git add commit_sha.txt
           git commit -m "Add commit SHA ${GITHUB_SHA}"
-
-      - name: Wait for 10 seconds
-        run: sleep 10
-
-      - name: Push changes
-        run: |
           git push origin HEAD:main
         env:
           GITHUB_TOKEN: 'abcded'
+          GH_TOKEN: 'bdfdf'
